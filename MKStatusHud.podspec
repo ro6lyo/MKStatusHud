@@ -24,9 +24,9 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'ro6lyo' => 'roshlyo@icloud.com' }
   s.source           = { :git => 'https://github.com/ro6lyo/MKStatusHud.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  # s.social_media_url = 'https://twitter.com/<ro6lyo>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'MKStatusHud/Classes/**/*'
   
