@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MKStatusHud_Example' do
+  pod 'MKStatusHud', :path => '../'
+
+  target 'MKStatusHud_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
