@@ -1,0 +1,6 @@
+framework module MKStatusHud {
+  umbrella header "MKStatusHud-umbrella.h"
+
+  export *
+  module * { export * }
+}

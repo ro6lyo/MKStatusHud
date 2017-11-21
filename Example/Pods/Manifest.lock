@@ -1,0 +1,16 @@
+PODS:
+  - MKStatusHud (0.1.0)
+
+DEPENDENCIES:
+  - MKStatusHud (from `../`)
+
+EXTERNAL SOURCES:
+  MKStatusHud:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MKStatusHud: d92f792ef22f1d0893cf487cda9ad8d756e6efde
+
+PODFILE CHECKSUM: 0ba0dbbcef50b47af32908953ad032dfe11c6ad1
+
+COCOAPODS: 1.3.1

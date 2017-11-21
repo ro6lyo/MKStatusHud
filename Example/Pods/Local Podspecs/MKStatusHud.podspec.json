@@ -1,0 +1,22 @@
+{
+  "name": "MKStatusHud",
+  "version": "0.1.0",
+  "summary": "A short description of MKStatusHud.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/ro6lyo/MKStatusHud",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "ro6lyo": "Mehmed.Kadir@bulpros.com"
+  },
+  "source": {
+    "git": "https://github.com/ro6lyo/MKStatusHud.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "MKStatusHud/Classes/**/*"
+}
