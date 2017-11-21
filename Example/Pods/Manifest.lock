@@ -1,5 +1,7 @@
 PODS:
-  - MKStatusHud (0.1.0)
+  - lottie-ios (2.1.4)
+  - MKStatusHud (0.1.0):
+    - lottie-ios
 
 DEPENDENCIES:
   - MKStatusHud (from `../`)
@@ -9,8 +11,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  MKStatusHud: d92f792ef22f1d0893cf487cda9ad8d756e6efde
+  lottie-ios: 94fa2d82547ce3adf1e61157653ba99999fd279f
+  MKStatusHud: c5edd190497518629fa2fa6aff91d1460f57f358
 
-PODFILE CHECKSUM: 0ba0dbbcef50b47af32908953ad032dfe11c6ad1
+PODFILE CHECKSUM: af6d4068c00b4da7c46644d5d1449b37399bbf62
 
 COCOAPODS: 1.3.1
