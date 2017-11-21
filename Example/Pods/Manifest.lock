@@ -1,6 +1,6 @@
 PODS:
   - lottie-ios (2.1.4)
-  - MKStatusHud (0.1.0):
+  - MKStatusHud (0.3.0):
     - lottie-ios
 
 DEPENDENCIES:
@@ -12,7 +12,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   lottie-ios: 94fa2d82547ce3adf1e61157653ba99999fd279f
-  MKStatusHud: c5edd190497518629fa2fa6aff91d1460f57f358
+  MKStatusHud: 38452c103a4c5e58f0ea0d6cc98f8ad0273e81f6
 
 PODFILE CHECKSUM: af6d4068c00b4da7c46644d5d1449b37399bbf62
 
