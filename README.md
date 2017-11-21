@@ -1,13 +1,15 @@
 # MKStatusHud
 
-[![CI Status](http://img.shields.io/travis/ro6lyo/MKStatusHud.svg?style=flat)](https://travis-ci.org/ro6lyo/MKStatusHud)
 [![Version](https://img.shields.io/cocoapods/v/MKStatusHud.svg?style=flat)](http://cocoapods.org/pods/MKStatusHud)
 [![License](https://img.shields.io/cocoapods/l/MKStatusHud.svg?style=flat)](http://cocoapods.org/pods/MKStatusHud)
 [![Platform](https://img.shields.io/cocoapods/p/MKStatusHud.svg?style=flat)](http://cocoapods.org/pods/MKStatusHud)
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+![Gif](https://media.giphy.com/media/xUOxf1ItNMsnX81aNy/giphy.gif)
+![Gif](https://media.giphy.com/media/3o6fJ4mwrIOtfer8yY/giphy.gif)
+![Gif](https://media.giphy.com/media/xT0xeGvx6mOeN124eI/giphy.gif)
+![Gif](https://media.giphy.com/media/l2QEcfghWUBnO7kTm/giphy.gif)
 
 ## Requirements
 
