@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MKStatusHud'
-  s.version          = '0.3.0'
+  s.version          = '0.4.0'
   s.summary          = 'A Swift based reimplementation of the Apple HUD and added natively rendered After Effects vector animations.'
 
 # This description is used to generate tags and improve search results.
