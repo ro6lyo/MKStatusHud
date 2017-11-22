@@ -51,13 +51,25 @@ open class HUD {
         container.title.text = title
         container.subtitle.text = subtitle
         view.addSubview(container)
+        
+      //ADD constraints
+        self.container.translatesAutoresizingMaskIntoConstraints = false
+        let centerXConstraint = NSLayoutConstraint(item: container, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
+        let centerYConstraint = NSLayoutConstraint(item: container, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: container, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 230)
+        let heightConstraint = NSLayoutConstraint(item: container, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 230)
+       
+        DispatchQueue.main.async {
+            view.addConstraints([centerXConstraint, centerYConstraint, widthConstraint, heightConstraint])
+            view.layoutIfNeeded()
+        }
+        
+        
         if rotation {
             container.startAnimation(animation: MKStatusHudAnimation.discreteRotation)
         }
         container.frame = CGRect(x: 0, y: 0, width: 230, height: 230)
-        container.center = view.center
-        container.autoresizingMask = [ .flexibleHeight, .flexibleWidth ]
-        
+
         keepProgress(progress: progress)
         
         container.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)

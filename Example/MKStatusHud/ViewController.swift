@@ -12,13 +12,14 @@ import Lottie
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var vv: UIView!
     @IBAction func buttonPressed(_ sender: Any) {
-        let hud = HUD(withImage: #imageLiteral(resourceName: "progress"), title: "Please wait!", subtitle: "While download proccess completes.")
-        hud.presentOnView = self.view
+        let hud = HUD(withImage: #imageLiteral(resourceName: "download"), title: "Please wait!", subtitle: "While download proccess completes.")
         hud.rotation = true
+        hud.presentOnView = self.view
         hud.show(begin: {(isStarted) in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                hud.update(withImage: #imageLiteral(resourceName: "download"), title: "Done!", subtitle: "Download completed.",rotation: false,dismiss:2)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+                hud.update(withImage: #imageLiteral(resourceName: "download"), title: "Done!", subtitle: "Download completed.",rotation: false,dismiss:10)
             })
         }) { (finished) in
             print(finished)
@@ -30,7 +31,8 @@ class ViewController: UIViewController {
         let hud = HUD(withAnimation: LOTAnimationView(name: "loader-success-failed"), title: "Please wait!", subtitle: "While download proccess completes.")
         hud.animateToProgress = 0.275
         hud.animationLoop = true
-        
+        hud.presentOnView = self.view
+
         //Present the hud
         hud.show(begin: { (isStarted) in
             //...//
@@ -55,7 +57,8 @@ class ViewController: UIViewController {
         let hud = HUD(withAnimation: LOTAnimationView(name: "loader-success-failed"), title: "Please wait!", subtitle: "While download proccess completes.")
         hud.animateToProgress = 0.275
         hud.animationLoop = true
-        
+        hud.presentOnView = self.view
+
         hud.show(begin: { (isStarted) in
             self.errorFinish(hud)
         }, progress: { (progress) in
@@ -72,6 +75,7 @@ class ViewController: UIViewController {
     @IBAction func loadingAction(_ sender: Any) {
         let hud = HUD(withAnimation: LOTAnimationView(name: "dna_like_loader"), title: "Please wait!", subtitle: "While download proccess completes.")
         hud.animationLoop = true
+        hud.presentOnView = self.view
         
         hud.show(begin: { (isStarted) in
             //Some time later close the hud

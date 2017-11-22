@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="csv-ri-OCp">
             <objects>
-                <viewController id="MrY-VO-sHv" customClass="ViewController" customModule="MKAnimationHud_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MrY-VO-sHv" customClass="ViewController" customModule="MKStatusHud_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kdo-e5-vWh"/>
                         <viewControllerLayoutGuide type="bottom" id="RQc-Kx-xkB"/>

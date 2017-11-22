@@ -42,7 +42,7 @@ public class MKStatusHudView:UIView {
         addSubview(content)
         content.frame = bounds
         content.autoresizingMask = [ .flexibleWidth,
-                                         .flexibleHeight]
+                                        .flexibleHeight]
         content.isUserInteractionEnabled = false
         isUserInteractionEnabled = false
     }
