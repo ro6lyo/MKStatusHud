@@ -35,8 +35,11 @@ open class HUD {
         self.title = title
         self.subtitle = subtitle
     }
-    
+    /**
+     If provided HUD will bre presented on that view, otherway it will use  UIApplication.shared.keyWindow
+     */
     public var presentOnView:UIView?
+    
     public var rotation:Bool = false
     
     public func show(begin:((Bool)->Void)? = nil,progress:((Double)->Void)? = nil,animation withCompletion:((Bool)->Void)? = nil,completion: ((Bool) -> Void)? = nil)  {
@@ -64,7 +67,6 @@ open class HUD {
             view.layoutIfNeeded()
         }
         
-        
         if rotation {
             container.startAnimation(animation: MKStatusHudAnimation.discreteRotation)
         }
@@ -89,7 +91,7 @@ open class HUD {
     public func update(withImage image:UIImage?,title:String?,subtitle:String?,rotation:Bool? = false,dismiss delay:Double? = nil) {
         if image != nil {
             container.statusImage.image = image
-            anime?.removeFromSuperview()
+            animation?.removeFromSuperview()
         }
         updateWith(title: title, subtitle: subtitle)
         if rotation != nil && !rotation! {
@@ -102,7 +104,7 @@ open class HUD {
         }
     }
     
-    var anime:LOTAnimationView?
+    var animation:LOTAnimationView?
     /**
      Predefined Optional
      */
@@ -123,14 +125,14 @@ open class HUD {
     /**
      init with animation
      */
-    public  init(withAnimation animation:LOTAnimationView?,title:String?,subtitle:String?) {
+    public  init(withAnimation animation:LOTAnimationView,title:String?,subtitle:String?) {
         self.title = title
         self.subtitle = subtitle
-        self.anime = animation ?? LOTAnimationView(name: "loading", bundle: Bundle(identifier: "org.cocoapods.MKAnimationHud")!)
+        self.animation = animation
     }
     
     internal func prepareAnimation(_ animationCompletion:((Bool)->Void)? = nil) {
-        if let animation = anime {
+        if let animation = self.animation {
             animation.pause()
             container.statusImage.image = nil
             if  !container.statusImage.subviews.contains(animation) {
@@ -157,11 +159,11 @@ open class HUD {
      */
     public func update(withAnimation animation:LOTAnimationView?,title:String?,subtitle:String?,rotation:Bool? = false,closeTime:Double? = nil) {
         if animation != nil {
-            anime?.removeFromSuperview()
-            anime = animation
+            self.animation?.removeFromSuperview()
+            self.animation = animation
         }else {
-            if anime != nil && anime!.isAnimationPlaying {
-                animationFromProgres = anime!.animationProgress
+            if self.animation != nil && self.animation!.isAnimationPlaying {
+                animationFromProgres = self.animation!.animationProgress
             }
         }
         prepareAnimation(animationCompletion)
@@ -225,8 +227,8 @@ open class HUD {
             self?.container.removeFromSuperview()
             self?.timer?.invalidate()
             self?.progressTime = nil
-            self?.anime?.stop()
-            self?.anime?.removeFromSuperview()
+            self?.animation?.stop()
+            self?.animation?.removeFromSuperview()
         }
     }
 }

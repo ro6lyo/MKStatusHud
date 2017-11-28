@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var vv: UIView!
     @IBAction func buttonPressed(_ sender: Any) {
-        let hud = HUD(withImage: #imageLiteral(resourceName: "download"), title: "Please wait!", subtitle: "While download proccess completes.")
+        let hud = HUD(withImage: #imageLiteral(resourceName: "progress"), title: "Please wait!", subtitle: "While download proccess completes.")
         hud.rotation = true
         hud.presentOnView = self.view
         hud.show(begin: {(isStarted) in
