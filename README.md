@@ -31,32 +31,52 @@ import Lottie
 ```
 Now, you can proceed to create  an arbitrary HUD with image like this:
 ```swift
-let hud = HUD(withImage: "UIImage"), title: "Please wait!", subtitle: "While download proccess completes.")
+let hud = HUD(withImage: UIImage()), title: "Please wait!", subtitle: "While download proccess completes.")
 ```
 or you can create HUD with adobe After Efect animation like this:
 ```swift
 let hud = HUD(withAnimation: LOTAnimationView(name: "loader-success-failed"), title: "Please wait!", subtitle: "While download proccess completes.")
 ```
-alternatively you can customize the hud and animaiton behavior with lots of "plumbing" API:
+alternatively you can customize the hud and animation behavior with lots of "plumbing" API:
 ```swift
 hud.rotation            // rotates  hud image
 hud.presentOnView       // if provided will present hud on that view, other ways it will use UIApplication.keywindow
 ```
-Animation quick settings, you can use those, or you can manipulate animaiton directly:
+Animation quick settings, you can use those, or you can manipulate animation directly:
 ```swift
 hud.animateToProgress   // plays animation to the given progress
 hud.animationLoop       // loops the animation
 hud.animationScale      // scales the animation
 ```
+When you done setting up the hud, you can present it:
+```swift
+   hud.show({(_) in
+            // start network request and wait for response
+            // some time later update the hud with the response status 
+            //...//
+            hud.update(withImage: UIImage(), title: "Done!", subtitle: "Download completed.",rotation: false,dismiss:10)
+            //or if its a hud with vector animation you can update animation in realtime
+            hud.animateToProgress = 0.47
+            hud.animationLoop = false
+            hud.update()
+            
+        }, progress: { (progress) in
+            // progres block calls recieved in every 0.5s.
+        }, animation: { (isCompleted) in
+            // calls when vector animation stops and indicates if it is finished or not
+            if isCompleted {
+                hud.updateWith(title: "Done!", subtitle: "Process completed.")
+                hud.close(hideAfter: 2)
+            }
+        }) { (isClosed) in
+            // calls when the hud gets dissmissed
+        }
+```
 
 
-### General initialization 
-
-### Behavior
 
 ## Example
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 
 ## Author
 
